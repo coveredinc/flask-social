@@ -1,3 +1,4 @@
+from builtins import range
 import unittest
 import mock
 from tests.test_app.sqlalchemy import create_app as create_sql_app

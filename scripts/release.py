@@ -11,6 +11,7 @@
     :license: BSD, see LICENSE for more details.
 """
 from __future__ import print_function
+from builtins import map
 import sys
 import os
 import re
@@ -59,7 +60,7 @@ def parse_changelog():
 
 def bump_version(version):
     try:
-        parts = map(int, version.split('.'))
+        parts = list(map(int, version.split('.')))
     except ValueError:
         fail('Current version is not numeric')
     parts[-1] += 1

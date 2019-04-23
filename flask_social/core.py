@@ -8,6 +8,7 @@
     :copyright: (c) 2012 by Matt Wright.
     :license: MIT, see LICENSE for more details.
 """
+from builtins import object
 from importlib import import_module
 
 from flask import current_app

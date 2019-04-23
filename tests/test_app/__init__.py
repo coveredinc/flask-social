@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from builtins import object
 from flask import Flask, render_template, current_app
 from flask_security import login_required
 from werkzeug import url_decode

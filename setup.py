@@ -46,7 +46,11 @@ setup(
         'Flask-SQLAlchemy',
         'Flask-MongoEngine',
         'Flask-Peewee',
-        'facebook-sdk'
+        # 'facebook-sdk',
+        # 'foursquare',
+        # 'google-api-python-client',
+        # 'oauth2client',
+        # 'python-twitter'
     ],
     dependency_links=[
         'http://github.com/mattupstate/flask-security/tarball/develop#egg=Flask-Security-1.3.0-dev'

@@ -11,8 +11,10 @@
 
 from __future__ import absolute_import
 
+from future import standard_library
+standard_library.install_aliases()
 import foursquare
-import urlparse
+import urllib.parse
 
 config = {
     'id': 'foursquare',
@@ -47,7 +49,7 @@ def get_connection_values(response, **kwargs):
     api = foursquare.Foursquare(access_token=access_token)
     user = api.users()['user']
     profile_url = 'http://www.foursquare.com/user/' + user['id']
-    image_url = urlparse.urljoin(user['photo']['prefix'],
+    image_url = urllib.parse.urljoin(user['photo']['prefix'],
                                  user['photo']['suffix'])
 
     return dict(

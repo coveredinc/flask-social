@@ -9,6 +9,7 @@
     :license: MIT, see LICENSE for more details.
 """
 
+from builtins import object
 from flask_security.datastore import SQLAlchemyDatastore, MongoEngineDatastore, \
     PeeweeDatastore
 
@@ -78,7 +79,7 @@ class MongoEngineConnectionDatastore(MongoEngineDatastore, ConnectionDatastore):
             from mongoengine.queryset import Q, QCombination
         except ImportError:
             from mongoengine.queryset.visitor import Q, QCombination
-        queries = map(lambda i: Q(**{i[0]: i[1]}), kwargs.items())
+        queries = [Q(**{i[0]: i[1]}) for i in kwargs.items()]
         query = QCombination(QCombination.AND, queries)
         return self.connection_model.objects(query)
 
